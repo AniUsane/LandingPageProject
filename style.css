@@ -20,7 +20,7 @@ header {
     margin-bottom: 94px;
 }
 
-ul {
+.navigation {
     display: flex;
     flex-direction: row;
     list-style-type: none;
@@ -221,4 +221,14 @@ h5 {
     width: 100%;
     max-height: 44px;
     height: 100%;
+}
+
+.subcategory {
+    display: none;
+    position: absolute;
+    list-style: none;
+}
+
+.category:hover .subcategory {
+    display:block;
 }

@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <?php include 'contact.php'; ?>
+    <?php include 'header_nav.php'; ?>
 </head>
 <body>
     <header>
@@ -18,22 +19,24 @@
             </div>
             <div>
                 <nav>
-                    <ul>
-                        <li>
-                            <a href="">
-                                Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                Newsletter
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                Twitter
-                            </a>
-                        </li>
+                    <ul class="navigation">
+                        <?php
+                            foreach ($categories as $category){
+                                echo '<li class="category">
+                                        <a href= "' . $category['link'] . '" > ' . $category['name'] . ' </a>
+                                        <ul class = "subcategory">';
+                                             
+                                        foreach($category['children'] as $subcategory){
+                                            echo '<li class="subcategory>
+                                            <a href= "' . $subcategory['link'] . '" > ' . $subcategory['name'] . ' </a>
+                                            ';
+                                        }
+
+                                        echo '</ul>
+                                    </li>';
+                            }
+                        ?>
+                        
                     </ul>
                 </nav>
             </div>
