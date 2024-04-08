@@ -47,3 +47,38 @@ $posts = [
         'info' => 'Nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim.',
     ],
 ];
+
+function cards_loop($projects){
+    foreach($projects as $project){
+
+        echo '  <div class="container2">
+                    <div class="single-large-card">
+                        <div class = "image-div">
+                            <img class = "large-card-image" src="' . $project['image'] . '" alt="card-image">
+                        </div>
+                        
+                        <div class="large-cards-text">
+                            <h2> ' . $project['title'] . ' </h2>
+                            <p class="paragraph"> ' . $project['info'] . ' </p>
+                            <p class="paragraph"> ' . $project['info2'] . ' </p>
+                        </div>
+                    </div>
+                </div>';
+
+    }
+}
+
+function posts_loop($posts){
+    foreach($posts as $post){
+        echo '<div class = "single-card">
+                <div class = "cards-image">
+                    <img class = "image" src="' . $post['image'] . '" alt="card-image">
+                </div>
+                <div class = "cards-text">
+                    <h4> ' . $post['title'] . ' </h4>
+                    <h5> ' . $post['date'] . ' </h5>
+                    <p class = "inside-card-text"> ' . $post['info'] . ' </p>
+                </div>
+            </div>';
+    }
+}

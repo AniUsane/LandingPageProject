@@ -31,3 +31,20 @@ $categories = [
     ],
 
 ];
+
+function categories_loop($categories){
+    foreach ($categories as $category){
+        echo '<li class="category">
+                <a href= "' . $category['link'] . '" > ' . $category['name'] . ' </a>
+                <ul class = "subcategory">';
+                     
+                foreach($category['children'] as $subcategory){
+                    echo '<li class="subcategory>
+                    <a href= "' . $subcategory['link'] . '" > ' . $subcategory['name'] . ' </a>
+                    ';
+                }
+
+                echo '</ul>
+            </li>';
+    }
+}
